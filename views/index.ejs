@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaatabook</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <nav class="flex justify-between p-4 bg-white shadow-md">
+      <div class="text-xl font-bold">Khaatabook</div>
+      <div>
+        <a href="/" class="text-blue-500 hover:text-blue-700 mx-2">Home</a>
+        <a href="/create" class="text-blue-500 hover:text-blue-700 mx-2"
+          >Create New Hisaab</a
+        >
+      </div>
+    </nav>
+
+    <main class="container mx-auto p-4">
+      <h1 class="text-2xl font-bold mb-4">All Hisaab Kitaab</h1>
+      <div class="space-y-4">
+        <% hisaabs.forEach(function(hisaab) { %>
+        <div class="flex items-center bg-white p-4 shadow-md rounded-lg">
+          <div class="flex-1 text-lg"><%= hisaab.split(".")[0] %></div>
+          <div class="flex space-x-2">
+            <a
+              href="/view/<%= hisaab %>"
+              class="text-white bg-blue-500 hover:bg-blue-700 p-2 rounded"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="/edit/<%= hisaab %>"
+              class="text-white bg-blue-500 hover:bg-blue-700 p-2 rounded"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5h2m-2 4h2m-2 4h2m-6 4h8m2-12h2a2 2 0 012 2v8a2 2 0 01-2 2h-2m4-10V5a2 2 0 00-2-2h-8a2 2 0 00-2 2v4M7 7v4m0 0v4m-2-4h4"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="/delete/<%= hisaab %>"
+              class="text-white bg-red-500 hover:bg-red-700 p-2 rounded"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </main>
+  </body>
+</html>

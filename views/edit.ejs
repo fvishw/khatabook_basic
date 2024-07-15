@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaatabook</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white text-black">
+    <nav class="flex justify-between p-4 bg-white shadow-md">
+      <div class="text-xl font-bold">Khaatabook</div>
+      <div>
+        <a href="/" class="text-blue-500 hover:text-blue-700 mx-2">Home</a>
+        <a href="/create" class="text-blue-500 hover:text-blue-700 mx-2"
+          >Create New Hisaab</a
+        >
+      </div>
+    </nav>
+
+    <main class="p-6">
+      <section class="mb-4">
+        <h2 class="text-lg font-semibold">
+          hisaab of
+          <a href="#" class="text-blue-500 hover:underline"><%= filename %></a>
+        </h2>
+      </section>
+      <form action="/update/<%= filename %>" method="post">
+        <textarea name="details" class="text-gray-600 text-base">
+<%= details %></textarea
+        >
+        <br />
+        <button
+          class="mt-5 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 px-4 py-2 focus:outline-none"
+          onclick
+        >
+          Update Hisaab
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
